@@ -50,6 +50,8 @@ Key features of NGINX include:
 
 6. **Support for WebSockets**: NGINX supports real-time communication for applications that require persistent connections.
 
+![image alt](https://github.com/Gautam-io-dev/DOCKER/blob/c766cefe31e958d1ff5596cd73402224802b6170/NGINX%20WORKING.webp)   
+
 Overall, NGINX is popular for its flexibility and robustness, making it a go-to choice for many web applications and services.
 
 ![image alt](
