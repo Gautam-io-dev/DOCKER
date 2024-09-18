@@ -56,7 +56,6 @@ Overall, NGINX is popular for its flexibility and robustness, making it a go-to 
 
 # HOW TO INSTALL NGINX
 
-How to Install NGINX
 In this tutorial, we’ll show you how to install NGINX on Linux. Open your Linux machine and run an update using the command below:
 
     sudo apt-get update
@@ -84,3 +83,15 @@ After running this command, you should see the following:
 To check whether your NGINX server is working fine, run the following:
 
     sudo systemctl status nginx
+
+# HOW TO INSTALL DOCKER
+
+STEP 1 - INSTALLING DOCKER
+
+The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+
+First, update your existing list of packages:
+
+
+
+    
