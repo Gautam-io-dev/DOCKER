@@ -86,63 +86,113 @@ To check whether your NGINX server is working fine, run the following:
 
 # HOW TO INSTALL DOCKER
 
-STEP 1 - INSTALLING DOCKER
+To install Docker on a remote server using PuTTY, you'll first need to ensure you have access to a Linux server (like Ubuntu, CentOS, etc.) via SSH. Here's a step-by-step guide:
 
-The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+### Step 1: Connect to Your Server
 
-First, update your existing list of packages:
+1. **Open PuTTY**.
+2. **Enter the hostname or IP address** of your server.
+3. **Click "Open"** to initiate the connection.
+4. **Log in** with your username and password.
 
-    sudo apt update
+### Step 2: Update Your Package Index
 
-Next, install a few prerequisite packages which let apt use packages over HTTPS:
+Before installing Docker, it’s a good idea to update the package index:
 
-    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```bash
+sudo apt update
+```
 
-Then add the GPG key for the official Docker repository to your system:
+### Step 3: Install Prerequisites
 
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+For Ubuntu, install the required packages:
 
-Add the Docker repository to APT sources:
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
 
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+For CentOS, run:
 
-This will also update our package database with the Docker packages from the newly added repo.
+```bash
+sudo yum install -y yum-utils
+```
 
-Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+### Step 4: Add Docker’s Official GPG Key
 
-    apt-cache policy docker-ce
+For Ubuntu:
 
-You’ll see output like this, although the version number for Docker may be different:
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
 
-![image alt](https://github.com/Gautam-io-dev/HOST-WEBSITE-USING-DOCKER-NGINX/blob/2df8c5d80d63baf1bedc55288acce5b046d881c0/DOCKR%20OUTPUT.png)
+For CentOS:
 
-Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 20.04 (focal).
+```bash
+sudo rpm --import https://download.docker.com/linux/centos/gpg
+```
 
-Finally, install Docker:
+### Step 5: Set Up the Stable Repository
 
-    sudo apt install docker-ce
-    
-Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+For Ubuntu:
 
-    sudo systemctl status docker
+```bash
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
 
-The output should be similar to the following, showing that the service is active and running:
-    
+For CentOS:
 
+```bash
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
 
+### Step 6: Install Docker
 
-    
+For Ubuntu:
 
+```bash
+sudo apt update
+sudo apt install docker-ce
+```
 
-    
-    
+For CentOS:
 
-    
+```bash
+sudo yum install docker-ce
+```
 
+### Step 7: Start Docker
 
-    
-    
+Enable and start the Docker service:
 
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
 
+### Step 8: Verify the Installation
 
-    
+Check if Docker is running:
+
+```bash
+sudo systemctl status docker
+```
+
+You can also run a test container:
+
+```bash
+sudo docker run hello-world
+```
+
+### Step 9: (Optional) Manage Docker as a Non-Root User
+
+If you want to run Docker commands without `sudo`, add your user to the Docker group:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+After running this command, log out and back in for the changes to take effect.
+
+### Conclusion
+
+You’ve successfully installed Docker using PuTTY! If you have any questions or run into issues, feel free to ask.
