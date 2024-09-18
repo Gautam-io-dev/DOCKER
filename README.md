@@ -34,6 +34,8 @@ Overall, containers facilitate rapid development, testing, and deployment of app
 
 NGINX is a high-performance web server and reverse proxy server that is widely used for serving web applications, handling HTTP and HTTPS requests, and load balancing traffic. It is known for its speed, efficiency, and ability to handle a large number of concurrent connections with low resource usage.
 
+![image alt](https://github.com/Gautam-io-dev/DOCKER/blob/a52bcc864f4ebad1c9bc86a09706b6df40b37c97/NGINX.jpg)
+
 Key features of NGINX include:
 
 1. **Web Server**: It can serve static content (like HTML, CSS, and images) quickly and efficiently.
@@ -49,3 +51,5 @@ Key features of NGINX include:
 6. **Support for WebSockets**: NGINX supports real-time communication for applications that require persistent connections.
 
 Overall, NGINX is popular for its flexibility and robustness, making it a go-to choice for many web applications and services.
+
+![image alt](
