@@ -29,3 +29,23 @@ Key characteristics of containers include:
 4. **Scalability**: Containers can be easily scaled up or down to handle varying workloads.
 
 Overall, containers facilitate rapid development, testing, and deployment of applications, making them a cornerstone of modern DevOps practices.
+
+# NGINX
+
+NGINX is a high-performance web server and reverse proxy server that is widely used for serving web applications, handling HTTP and HTTPS requests, and load balancing traffic. It is known for its speed, efficiency, and ability to handle a large number of concurrent connections with low resource usage.
+
+Key features of NGINX include:
+
+1. **Web Server**: It can serve static content (like HTML, CSS, and images) quickly and efficiently.
+
+2. **Reverse Proxy**: NGINX can act as an intermediary for requests from clients seeking resources from other servers, distributing the load and improving performance.
+
+3. **Load Balancing**: It can distribute incoming traffic across multiple servers to ensure availability and reliability.
+
+4. **SSL/TLS Termination**: NGINX can handle SSL/TLS encryption, improving security while offloading the processing from backend servers.
+
+5. **Caching**: It can cache content to reduce latency and improve response times.
+
+6. **Support for WebSockets**: NGINX supports real-time communication for applications that require persistent connections.
+
+Overall, NGINX is popular for its flexibility and robustness, making it a go-to choice for many web applications and services.
