@@ -114,6 +114,22 @@ Make sure you are about to install from the Docker repo instead of the default U
 
 You’ll see output like this, although the version number for Docker may be different:
 
+![image alt](https://github.com/Gautam-io-dev/HOST-WEBSITE-USING-DOCKER-NGINX/blob/2df8c5d80d63baf1bedc55288acce5b046d881c0/DOCKR%20OUTPUT.png)
+
+Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 20.04 (focal).
+
+Finally, install Docker:
+
+    sudo apt install docker-ce
+    
+Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+
+    sudo systemctl status docker
+
+The output should be similar to the following, showing that the service is active and running:
+    
+
+
 
     
 
